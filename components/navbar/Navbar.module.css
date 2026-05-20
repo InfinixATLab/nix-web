@@ -1,0 +1,85 @@
+.navbar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logoText {
+  font-size: 2.25rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.logoSub {
+  line-height: 1.1;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #d1d5db;
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .navLinks {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.btnDownload {
+  display: none;
+  background-color: #22C55E;
+  color: white;
+  font-weight: 700;
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+@media (min-width: 640px) {
+  .btnDownload {
+    display: block;
+  }
+}
+
+.btnDownload:hover {
+  background-color: #16a34a;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
