@@ -1,198 +1,205 @@
 .heroWrapper {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: inherit;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
 }
 
 .glowEffect {
-  position: absolute;
-  top: 25%;
-  right: 0;
-  width: 500px;
-  height: 500px;
-  background-color: var(--button-color-from);
-  filter: blur(120px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background-color: var(--button-color-from);
+    filter: blur(120px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 @media (min-width: 768px) {
-  .glowEffect {
-    right: 25%;
-  }
+    .glowEffect {
+        right: 25%;
+    }
 }
 
 .mainContent {
-  position: relative;
-  z-index: 10;
-  flex: 1;
-  width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
-  .mainContent {
-    flex-direction: row;
-  }
+    .mainContent {
+        flex-direction: row;
+    }
 }
 
 .leftColumn {
-  flex: 1;
-  max-width: 42rem;
+    flex: 1;
+    max-width: 42rem;
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin: 0;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0;
 }
 
 @media (min-width: 640px) {
-  .title { font-size: 3.75rem; }
+    .title {
+        font-size: 3.75rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .title { font-size: 5rem; }
+    .title {
+        font-size: 5rem;
+    }
 }
 
 .highlightWrapper {
-  position: relative;
-  display: inline-block;
-  margin-top: 0.5rem;
+    position: relative;
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 
 .highlightText {
-  position: relative;
-  z-index: 10;
+    position: relative;
+    z-index: 10;
 }
 
 .yellowHighlight {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0;
-  width: 100%;
-  height: 1rem;
-  background-color: var(--alert-color);
-  z-index: 0;
-  border-radius: 2px;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: var(--alert-color);
+    z-index: 0;
+    border-radius: 2px;
 }
 
 @media (min-width: 640px) {
-  .yellowHighlight { height: 1.5rem; }
+    .yellowHighlight {
+        height: 1.5rem;
+    }
 }
 
 .description {
-  margin-top: 2rem;
-  font-size: 1.125rem;
-  color: var(--title-pages);
-  max-width: 32rem;
-  line-height: 1.625;
-  font-weight: 300;
+    margin-top: 2rem;
+    font-size: 1.125rem;
+    color: var(--title-pages);
+    max-width: 32rem;
+    line-height: 1.625;
+    font-weight: 300;
 }
 
 @media (min-width: 640px) {
-  .description { font-size: 1.25rem; }
+    .description {
+        font-size: 1.25rem;
+    }
 }
 
 .storeButtons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
 }
 
 .storeBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--background-color);
-  border: 1px solid var(--button-color-to-disabled);
-  border-radius: 0.75rem;
-  padding: 0.625rem 1.25rem;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--button-color-to-disabled);
+    border-radius: 0.75rem;
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
 }
 
 .storeBtn:hover {
-  background-color: var(--button-color-to);
+    background-color: var(--button-color-to);
 }
 
 .storeIcon {
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: block;
+    flex-shrink: 0;
 }
 
 .storeText {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
 .storeLabel {
-  font-size: 0.625rem;
-  line-height: 1;
-  color: var(--button-pages);
+    font-size: 0.625rem;
+    line-height: 1;
+    color: var(--button-pages);
 }
 
 .storeName {
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 .rightColumn {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 28rem;
-  margin-top: 2.5rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 28rem;
+    margin-top: 2.5rem;
 }
 
 @media (min-width: 1024px) {
-  .rightColumn {
-    justify-content: flex-end;
-    max-width: none;
-    margin-top: 0;
-  }
+    .rightColumn {
+        justify-content: flex-end;
+        max-width: none;
+        margin-top: 0;
+    }
 }
 
 .mockupContainer {
-  position: relative;
-  width: 100%;
-  max-width: 20rem;
+    position: relative;
+    width: 100%;
+    max-width: 20rem;
+    aspect-ratio: 1 / 2;
 }
 
 @media (min-width: 1024px) {
-  .mockupContainer { max-width: 25rem; }
+    .mockupContainer {
+        max-width: 25rem;
+    }
 }
 
 .mockupImage {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
-  position: relative;
-  z-index: 10;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+    position: relative;
+    z-index: 10;
 }
