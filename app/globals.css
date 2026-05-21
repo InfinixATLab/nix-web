@@ -1,26 +1,47 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background-color: #020A1A;
+    
+    --button-color-from: rgba(0, 85, 255, 0.35);
+    --button-color-to: rgba(0, 20, 90, 0.45);
+    
+    --button-color-from-disabled: rgba(30, 50, 80, 0.3);
+    --button-color-to-disabled: rgba(15, 25, 45, 0.2);
+    
+    --confirmation-button-color-from: rgba(0, 235, 130, 0.35);
+    --confirmation-button-color-to: rgba(0, 75, 40, 0.45);
+    
+    --deny-button-color-from: rgba(255, 42, 85, 0.35);
+    --deny-button-color-to: rgba(90, 0, 20, 0.45);
+    
+    --warning-button-color-from: rgba(255, 213, 0, 0.95);
+    --warning-button-color-to: rgba(255, 149, 0, 0.72);
+
+    --button-shadow: #00B4FF;
+    --confirmation-shadow: #00FF88;
+    --deny-shadow: #FF2A55;
+    --warning-shadow: #FFD700;
+
+    --button-pages: #F2F4F7;
+    --title-pages: #A8ADB3;
+
+    --text-color: #fff;
+    --error-color: #FF2A55;
+    --success-color: #00FF88;
+    --alert-color: #FFB300;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
 }
