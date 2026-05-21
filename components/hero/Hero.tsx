@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -23,16 +24,16 @@ export default function Hero() {
           </p>
 
           <div className={styles.storeButtons}>
-            <a href="#" className={styles.storeBtn}>
-              <div className={styles.storeIcon}>🍎</div>
+            <a href="#" className={styles.storeBtn} aria-label="App Store">
+              <Image src="/apple-store.webp" alt="App Store" className={styles.storeIcon} />
               <div className={styles.storeText}>
                 <span className={styles.storeLabel}>Baixar na</span>
                 <span className={styles.storeName}>App Store</span>
               </div>
             </a>
 
-            <a href="#" className={styles.storeBtn}>
-              <div className={styles.storeIcon}>▶️</div>
+            <a href="#" className={styles.storeBtn} aria-label="Google Play">
+              <Image src="/google-play.webp" alt="Google Play" className={styles.storeIcon} />
               <div className={styles.storeText}>
                 <span className={styles.storeLabel}>Baixar no</span>
                 <span className={styles.storeName}>Google Play</span>
@@ -43,7 +44,7 @@ export default function Hero() {
 
         <div className={styles.rightColumn}>
           <div className={styles.mockupContainer}>
-            <img
+            <Image
               src="/mockup-app.png"
               alt="Interface do aplicativo Nix Gestão Eleitoral no celular"
               className={styles.mockupImage}
