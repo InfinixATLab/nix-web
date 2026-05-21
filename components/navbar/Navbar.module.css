@@ -23,7 +23,7 @@
   font-weight: 900;
   font-style: italic;
   letter-spacing: -0.05em;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .logoSub {
@@ -41,6 +41,9 @@
   gap: 1.5rem;
   font-size: 0.875rem;
   font-weight: 500;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -50,19 +53,19 @@
 }
 
 .navLink {
-  color: #d1d5db;
+  color: var(--title-pages);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .btnDownload {
   display: none;
-  background-color: #22C55E;
-  color: white;
+  background: linear-gradient(135deg, var(--warning-button-color-from), var(--warning-button-color-to));
+  color: var(--text-color);
   font-weight: 700;
   padding: 0.625rem 1.5rem;
   border: none;
@@ -70,7 +73,7 @@
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 15px var(--warning-shadow);
 }
 
 @media (min-width: 640px) {
@@ -80,6 +83,6 @@
 }
 
 .btnDownload:hover {
-  background-color: #16a34a;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 20px var(--warning-shadow);
+  transform: scale(1.05);
 }
