@@ -1,6 +1,6 @@
 .section {
     background-color: var(--background-color);
-    padding: 4rem 1.5rem;
+    padding: 6rem 1.5rem;
 }
 
 .container {
@@ -16,6 +16,12 @@
     .container {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
     }
 }
 
