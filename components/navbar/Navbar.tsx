@@ -5,7 +5,7 @@ import { NavigationMenu } from "@base-ui/react";
 
 export default function Navbar() {
   return (
-    <header className={styles.navbar}>
+    <header className={`container ${styles.navbar}`}>
       <div className={styles.logoContainer}>
         <span className={styles.logoText}>NIX</span>
         <div className={styles.logoSub}>
@@ -25,9 +25,9 @@ export default function Navbar() {
         </NavigationMenu.List>
       </NavigationMenu.Root>
 
-      <button className={styles.btnDownload}>
+      <a href="#download" className={styles.btnDownload}>
         BAIXE JÁ
-      </button>
+      </a>
     </header>
   );
 }
