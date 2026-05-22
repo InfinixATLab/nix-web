@@ -1,0 +1,73 @@
+.footer {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--button-shadow-light);
+    padding: 3rem 1.5rem;
+    color: var(--text-color-muted);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Coluna da Esquerda: Marca e Copyright */
+.brandColumn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.logoNix {
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+.logoDesc {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-color-light);
+    line-height: 1;
+}
+
+.copyright {
+    font-size: 0.75rem;
+}
+
+/* Coluna da Direita: Contato */
+.contactColumn {
+    text-align: right;
+}
+
+.columnTitle {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.emailLink {
+    color: var(--text-color-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+
+.emailLink:hover {
+    color: var(--primary-color-highlight);
+}
