@@ -4,13 +4,11 @@ import {Feature} from "@/components/features/features.types";
 interface FeatureCardProps {
     feature: Feature;
     isActive: boolean;
-    onClick: () => void;
 }
 
-export default function FeatureCard({feature, isActive, onClick}: FeatureCardProps) {
+export default function FeatureCard({feature, isActive}: FeatureCardProps) {
     return (
         <div
-            onClick={onClick}
             className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
         >
             <div className={styles.cardIconWrapper}>
