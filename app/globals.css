@@ -1,6 +1,16 @@
 :root {
     --background-color: #020A1A;
-    
+    --background-card: #0B1221;
+    --background-card-hover: #0F172A;
+    --background-panel: #131E35;
+
+    --border-color: #1e293b;
+    --border-hover: #334155;
+
+    --primary-color: #2563eb;
+    --primary-color-hover: #1d4ed8;
+    --primary-color-highlight: #3b82f6;
+
     --button-color-from: rgba(0, 85, 255, 0.35);
     --button-color-to: rgba(0, 20, 90, 0.45);
     
@@ -17,14 +27,18 @@
     --warning-button-color-to: rgba(255, 149, 0, 0.72);
 
     --button-shadow: #00B4FF;
+    --button-shadow-light: #00B4FF80;
     --confirmation-shadow: #00FF88;
     --deny-shadow: #FF2A55;
     --warning-shadow: #FFD700;
 
-    --button-pages: #F2F4F7;
-    --title-pages: #A8ADB3;
+    --button-text-color: #F2F4F7;
 
-    --text-color: #fff;
+    --text-color: #ffffff;
+    --text-color-muted: #94a3b8;
+    --text-color-light: #cbd5e1;
+    --title-color: #A8ADB3;
+
     --error-color: #FF2A55;
     --success-color: #00FF88;
     --alert-color: #FFB300;
@@ -36,6 +50,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -44,4 +62,27 @@ body {
         'Helvetica Neue', sans-serif;
     font-weight: 400;
     line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-subtitle {
+    color: var(--primary-color-highlight);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.2;
+    margin: 0;
 }
