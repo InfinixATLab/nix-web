@@ -31,25 +31,39 @@
     position: relative;
     max-width: 1020px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
 }
 
-.carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 1rem 0;
+/* Embla Styles */
+.emblaViewport {
+    overflow: hidden;
     width: 100%;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
+.emblaContainer {
+    display: flex;
+    /* Espaçamento entre os slides */
+    margin-left: -1.5rem;
 }
+
+.emblaSlide {
+    position: relative;
+    /* 3 slides visíveis por padrão */
+    flex: 0 0 33.333%;
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .emblaSlide {
+        flex: 0 0 50%; /* 2 slides em telas médias */
+    }
+}
+
+@media (max-width: 640px) {
+    .emblaSlide {
+        flex: 0 0 100%; /* 1 slide em telas pequenas */
+    }
+}
+
 
 .navButton {
     position: absolute;
@@ -90,14 +104,13 @@
 }
 
 .card {
-    flex: 0 0 320px;
-    scroll-snap-align: center;
     background: var(--background-card);
     border: 1px solid transparent;
     border-radius: 1.5rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -232,20 +245,24 @@
     text-decoration: line-through;
 }
 
-.subscribeBtn {
-    background: linear-gradient(90deg, var(--button-shadow) 0%, var(--primary-color) 100%);
-    color: var(--text-color);
-    border: none;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    font-weight: 800;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    width: 100%;
-    text-align: center;
+.dots {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
 }
 
-.subscribeBtn:hover {
-    opacity: 0.9;
+.dot {
+    background-color: var(--button-color-to-disabled);
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dotSelected {
+    background-color: var(--button-shadow);
 }
