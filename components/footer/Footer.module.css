@@ -13,7 +13,6 @@
     gap: 2rem;
 }
 
-/* Coluna da Esquerda: Marca e Copyright */
 .brandColumn {
     display: flex;
     align-items: center;
@@ -47,7 +46,6 @@
     font-size: 0.75rem;
 }
 
-/* Coluna da Direita: Contato */
 .contactColumn {
     text-align: right;
 }

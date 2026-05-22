@@ -168,14 +168,14 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center; /* Adicionado para centralizar verticalmente */
+    align-items: center;
     width: 100%;
 }
 
 .mockupContainer {
     position: relative;
     width: 100%;
-    max-width: 22rem; /* Aumentado para a imagem ficar maior */
+    max-width: 22rem;
 }
 
 @media (min-width: 640px) {
@@ -193,7 +193,7 @@
 .mockupImage {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+    object-fit: contain;
     filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
     position: relative;
     z-index: 10;

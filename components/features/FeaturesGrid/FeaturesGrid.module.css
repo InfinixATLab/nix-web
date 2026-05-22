@@ -17,14 +17,12 @@
     color: var(--primary-color-highlight);
 }
 
-/* Grid layout for desktop */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
-/* Embla carousel layout for mobile */
 .emblaViewport {
     display: none;
 }
@@ -47,14 +45,14 @@
     .emblaContainer {
         display: flex;
         margin-left: -1.5rem;
-        align-items: stretch; /* Ensures all slides have the same height */
+        align-items: stretch;
     }
 
     .emblaSlide {
         position: relative;
         flex: 0 0 80%;
         padding-left: 1.5rem;
-        display: flex; /* Makes the card inside fill the height */
+        display: flex;
     }
 
     .dots {

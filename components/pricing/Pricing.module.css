@@ -33,7 +33,6 @@
     margin: 0 auto;
 }
 
-/* Embla Styles */
 .emblaViewport {
     overflow: hidden;
     width: 100%;
@@ -41,26 +40,24 @@
 
 .emblaContainer {
     display: flex;
-    /* Espaçamento entre os slides */
     margin-left: -1.5rem;
 }
 
 .emblaSlide {
     position: relative;
-    /* 3 slides visíveis por padrão */
     flex: 0 0 33.333%;
     padding-left: 1.5rem;
 }
 
 @media (max-width: 992px) {
     .emblaSlide {
-        flex: 0 0 50%; /* 2 slides em telas médias */
+        flex: 0 0 50%;
     }
 }
 
 @media (max-width: 640px) {
     .emblaSlide {
-        flex: 0 0 100%; /* 1 slide em telas pequenas */
+        flex: 0 0 100%;
     }
 }
 
@@ -110,7 +107,7 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+    height: 100%;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s ease, border-color 0.3s ease;
