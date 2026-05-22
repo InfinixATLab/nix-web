@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 import { navLinks } from "@/components/navbar/navbar.types";
 import { NavigationMenu } from "@base-ui/react";
@@ -7,10 +8,14 @@ export default function Navbar() {
   return (
     <header className={`container ${styles.navbar}`}>
       <div className={styles.logoContainer}>
-        <span className={styles.logoText}>NIX</span>
-        <div className={styles.logoSub}>
-          Gestão<br />Eleitoral
-        </div>
+        <Image
+          src="/Nix.svg"
+          alt="Nix Logo"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={100}
+          className={styles.logoImage}
+        />
       </div>
 
       <NavigationMenu.Root>
