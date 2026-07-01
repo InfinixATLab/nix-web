@@ -41,3 +41,18 @@
     font-weight: 600;
     line-height: 1.25;
 }
+
+.storeBtnDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: var(--border-color);
+    box-shadow: none;
+}
+
+.storeBtnDisabled:hover {
+    background-color: transparent;
+    border-color: var(--border-color);
+    transform: none;
+    box-shadow: none;
+}
