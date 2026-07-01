@@ -30,8 +30,8 @@ export default function StoreButton({ store }: StoreButtonProps) {
         src={icon}
         alt={alt}
         className={styles.storeIcon}
-        width={18}
-        height={20}
+        width={24}
+        height={26}
       />
       <div className={styles.storeText}>
         <span className={styles.storeLabel}>{label}</span>
