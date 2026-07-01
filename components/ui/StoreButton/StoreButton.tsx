@@ -12,20 +12,22 @@ const storeDetails = {
     name: 'App Store',
     icon: '/apple-store.webp',
     alt: 'App Store',
+    url: 'https://apps.apple.com/br/app/gest%C3%A3o-eleitoral-nix/id6761128711',
   },
   google: {
     label: 'Baixar no',
     name: 'Google Play',
     icon: '/google-play.webp',
     alt: 'Google Play',
+    url: 'https://play.google.com',
   },
 };
 
 export default function StoreButton({ store }: StoreButtonProps) {
-  const { label, name, icon, alt } = storeDetails[store];
+  const { label, name, icon, alt, url } = storeDetails[store];
 
   return (
-    <a href="#" className={styles.storeBtn} aria-label={alt}>
+    <a href={url} target="_blank" rel="noopener noreferrer" className={styles.storeBtn} aria-label={alt}>
       <Image
         src={icon}
         alt={alt}
