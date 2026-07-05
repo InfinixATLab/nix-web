@@ -14,19 +14,21 @@ const storeDetails = {
     alt: 'App Store',
     url: 'https://apps.apple.com/br/app/gest%C3%A3o-eleitoral-nix/id6761128711',
     disabled: false,
+    download: false,
   },
   google: {
-    label: 'Em breve no',
-    name: 'Google Play',
+    label: 'Baixar o',
+    name: 'APK Android',
     icon: '/google-play.webp',
-    alt: 'Google Play',
-    url: 'https://play.google.com',
-    disabled: true,
+    alt: 'Download Android APK',
+    url: '/nix-3.1.0.apk',
+    disabled: false,
+    download: true,
   },
 };
 
 export default function StoreButton({ store }: StoreButtonProps) {
-  const { label, name, icon, alt, url, disabled } = storeDetails[store];
+  const { label, name, icon, alt, url, disabled, download } = storeDetails[store];
 
   const buttonClass = `${styles.storeBtn} ${disabled ? styles.storeBtnDisabled : ''}`;
 
@@ -55,7 +57,14 @@ export default function StoreButton({ store }: StoreButtonProps) {
   }
 
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className={buttonClass} aria-label={alt}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={buttonClass}
+      aria-label={alt}
+      download={download ? 'nix-3.1.0.apk' : undefined}
+    >
       {InnerContent}
     </a>
   );

@@ -9,7 +9,7 @@ export default function DownloadSection() {
         <div className={styles.glowEffect}></div>
         <h2 className={styles.title}>Comece a transformar sua campanha hoje</h2>
         <p className={styles.description}>
-          Disponível para download na App Store e Google Play.
+          Disponível para download na App Store e para Android.
         </p>
         <div className={styles.storeButtonsWrapper}>
           <StoreButton store="apple" />
