@@ -6,18 +6,15 @@ import StoreButton from '../ui/StoreButton/StoreButton';
 export default function HeroSection() {
     return (
         <div className={styles.heroWrapper}>
-
             <div className={styles.glowEffect}></div>
 
             <main className={`container ${styles.mainContent}`}>
-
                 <div className={styles.leftColumn}>
                     <h1 className={styles.title}>
-                        NIX GESTÃO<br/>
+                        NIX GESTÃO<br />
                         <span className={styles.highlightWrapper}>
-              <span className={styles.highlightText}>ELEITORAL</span>
-              <span className={styles.yellowHighlight}></span>
-            </span>
+                            <span className={styles.highlightText}>ELEITORAL</span>
+                        </span>
                     </h1>
 
                     <p className={styles.description}>
@@ -41,7 +38,6 @@ export default function HeroSection() {
                         />
                     </div>
                 </div>
-
             </main>
         </div>
     );
