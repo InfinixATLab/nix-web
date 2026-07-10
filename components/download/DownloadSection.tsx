@@ -2,7 +2,11 @@ import React from 'react';
 import StoreButton from '../ui/StoreButton/StoreButton';
 import styles from './Download.module.css';
 
-export default function DownloadSection() {
+interface DownloadSectionProps {
+  onGooglePlayClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
+
+export default function DownloadSection({ onGooglePlayClick }: DownloadSectionProps) {
   return (
     <section className={styles.section} id="download">
       <div className={`container ${styles.container}`}>
@@ -13,7 +17,7 @@ export default function DownloadSection() {
         </p>
         <div className={styles.storeButtonsWrapper}>
           <StoreButton store="apple" />
-          <StoreButton store="google" />
+          <StoreButton store="google" onClick={onGooglePlayClick} />
         </div>
       </div>
     </section>

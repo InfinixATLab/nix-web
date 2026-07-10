@@ -1,0 +1,298 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(2, 10, 26, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1.5rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+    background-color: var(--background-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 32rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                0 0 40px rgba(0, 180, 255, 0.15);
+    padding: 2.5rem;
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glowEffect {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color-highlight);
+    filter: blur(60px);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+    color: var(--text-color);
+    background-color: var(--background-card-hover);
+    transform: rotate(90deg);
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--text-color-muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color-light);
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    background-color: var(--background-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--primary-color-highlight);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    background-color: var(--background-card-hover);
+}
+
+.submitButton {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(135deg, var(--button-color-from) 0%, var(--button-color-to) 100%);
+    border: 1px solid var(--border-hover);
+    border-radius: 0.75rem;
+    color: var(--button-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 8px var(--button-shadow-light);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+    border-color: var(--primary-color-highlight);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 0 12px var(--button-shadow);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: linear-gradient(135deg, var(--button-color-from-disabled) 0%, var(--button-color-to-disabled) 100%);
+    box-shadow: none;
+}
+
+.screenshotContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.screenshotWrapper {
+    flex: 1;
+    aspect-ratio: 9/16;
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-panel);
+}
+
+.screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instructionsSection {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+}
+
+.instructionsTitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color-highlight);
+    margin-bottom: 0.75rem;
+}
+
+.instructionsList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 0;
+}
+
+.instructionItem {
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.instructionItem::before {
+    content: '';
+    position: absolute;
+    left: 0.25rem;
+    top: 0.45rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--alert-color);
+    border-radius: 50%;
+}
+
+.errorText {
+    font-size: 0.875rem;
+    color: var(--error-color);
+    margin-top: 0.25rem;
+}
+
+/* Success Modal Styles */
+.successContent {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.successIconWrapper {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--success-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--success-color);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.successTitle {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.successMessage {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+.successHighlighted {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+.okButton {
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, var(--confirmation-button-color-from) 0%, var(--confirmation-button-color-to) 100%);
+    border: 1px solid var(--border-hover);
+    border-radius: 0.75rem;
+    color: var(--button-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 255, 136, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.okButton:hover {
+    border-color: var(--success-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 0 12px var(--success-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

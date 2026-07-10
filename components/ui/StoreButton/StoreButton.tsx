@@ -4,6 +4,7 @@ import styles from './StoreButton.module.css';
 
 interface StoreButtonProps {
   store: 'apple' | 'google';
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const storeDetails = {
@@ -21,13 +22,13 @@ const storeDetails = {
     name: 'APK Android',
     icon: '/google-play.webp',
     alt: 'Download Android APK',
-    url: '/nix-3.1.0.apk',
+    url: '#',
     disabled: false,
-    download: true,
+    download: false,
   },
 };
 
-export default function StoreButton({ store }: StoreButtonProps) {
+export default function StoreButton({ store, onClick }: StoreButtonProps) {
   const { label, name, icon, alt, url, disabled, download } = storeDetails[store];
 
   const buttonClass = `${styles.storeBtn} ${disabled ? styles.storeBtnDisabled : ''}`;
@@ -56,11 +57,18 @@ export default function StoreButton({ store }: StoreButtonProps) {
     );
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <a
       href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      onClick={handleClick}
+      target={url === '#' ? undefined : '_blank'}
+      rel={url === '#' ? undefined : 'noopener noreferrer'}
       className={buttonClass}
       aria-label={alt}
       download={download ? 'nix-3.1.0.apk' : undefined}

@@ -3,7 +3,11 @@ import styles from './Hero.module.css';
 import Image from 'next/image';
 import StoreButton from '../ui/StoreButton/StoreButton';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+    onGooglePlayClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
+
+export default function HeroSection({ onGooglePlayClick }: HeroSectionProps) {
     return (
         <div className={styles.heroWrapper}>
             <div className={styles.glowEffect}></div>
@@ -23,7 +27,7 @@ export default function HeroSection() {
 
                     <div className={styles.storeButtons}>
                         <StoreButton store="apple" />
-                        <StoreButton store="google" />
+                        <StoreButton store="google" onClick={onGooglePlayClick} />
                     </div>
                 </div>
 
