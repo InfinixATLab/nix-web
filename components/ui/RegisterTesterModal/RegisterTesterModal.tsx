@@ -15,11 +15,16 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        if (zoomedImage) {
+          setZoomedImage(null);
+        } else {
+          onClose();
+        }
       }
     };
 
@@ -32,7 +37,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, zoomedImage]);
 
   if (!isOpen) return null;
 
@@ -51,7 +56,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
 
     try {
       const apiHost = process.env.NEXT_PUBLIC_API_HOST || 'https://nix-ge-api.onrender.com';
-      const response = await fetch(`${apiHost}/register_tester/`, {
+      const response = await fetch(`${apiHost}/register-tester/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +97,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
 
         {!isSuccess ? (
           <>
-            <h2 className={styles.title}>Seja um Testador Android</h2>
+            <h2 className={styles.title}>Inscreva-se para baixar agora!</h2>
             <p className={styles.subtitle}>
               Insira o e-mail associado à sua conta da Google Play Store para receber acesso à versão de testes.
             </p>
@@ -135,7 +140,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
             </form>
 
             <div className={styles.screenshotContainer}>
-              <div className={styles.screenshotWrapper}>
+              <div className={styles.screenshotWrapper} onClick={() => setZoomedImage('/tutorials/gplay-1.png')}>
                 <Image
                   src="/tutorials/gplay-1.png"
                   alt="Tutorial Passo 1 - Abrir o menu na Google Play"
@@ -143,7 +148,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
                   fill
                 />
               </div>
-              <div className={styles.screenshotWrapper}>
+              <div className={styles.screenshotWrapper} onClick={() => setZoomedImage('/tutorials/gplay-2.png')}>
                 <Image
                   src="/tutorials/gplay-2.png"
                   alt="Tutorial Passo 2 - Visualizar o e-mail no menu"
@@ -175,10 +180,10 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
             </div>
             <h2 className={styles.successTitle}>Inscrição Concluída!</h2>
             <p className={styles.successMessage}>
-              Parabéns por se registrar como testador! Um e-mail está sendo enviado para a sua conta <span className={styles.successHighlighted}>{email}</span>.
+              Parabéns! Sua inscrição foi realizada com sucesso.
             </p>
             <p className={styles.successMessage}>
-              Você deve abrir o e-mail recebido e clicar no botão de confirmação dentro do corpo do e-mail para ter acesso imediato ao aplicativo.
+              Você receberá o link para acessar o aplicativo através do e-mail <span className={styles.successHighlighted}>{email}</span>.
             </p>
             <button className={styles.okButton} onClick={handleClose}>
               Entendi
@@ -186,6 +191,26 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
           </div>
         )}
       </div>
+
+      {zoomedImage && (
+        <div className={styles.zoomOverlay} onClick={() => setZoomedImage(null)}>
+          <div className={styles.zoomedImageWrapper} onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={zoomedImage}
+              alt="Screenshot ampliada"
+              className={styles.zoomedImage}
+              fill
+            />
+            <button
+              className={styles.closeZoomButton}
+              onClick={() => setZoomedImage(null)}
+              aria-label="Fechar zoom"
+            >
+              <X size={24} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
