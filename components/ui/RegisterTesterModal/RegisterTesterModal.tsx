@@ -56,7 +56,7 @@ export default function RegisterTesterModal({ isOpen, onClose }: RegisterTesterM
 
     try {
       const apiHost = process.env.NEXT_PUBLIC_API_HOST || 'https://nix-ge-api.onrender.com';
-      const response = await fetch(`${apiHost}/register-tester/`, {
+      const response = await fetch(`${apiHost}/users/register-tester/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
